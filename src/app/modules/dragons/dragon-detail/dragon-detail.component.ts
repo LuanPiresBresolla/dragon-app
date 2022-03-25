@@ -4,16 +4,15 @@ import { map, switchMap } from 'rxjs';
 import { DragonService } from '../dragon.service';
 import { IDragon } from '../dragons-list/dragons-list.component';
 
-type IParams = {
-  id: string;
-}
-
 @Component({
   selector: 'app-dragon-detail',
   templateUrl: './dragon-detail.component.html',
   styleUrls: ['./dragon-detail.component.scss']
 })
 export class DragonDetailComponent implements OnInit {
+
+  dragon: IDragon;
+  loading = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +26,15 @@ export class DragonDetailComponent implements OnInit {
       switchMap(id => this.dragonService.getDragonById<IDragon>(id)),
     )
     .subscribe(dragon => {
-      console.log(dragon);
+      this.dragon = {
+        ...dragon,
+        createdAtFormatted: new Date(dragon.createdAt).toLocaleDateString('pt-BR')
+      };
+      this.loading = false;
     });
+  }
+
+  handleSaveDragon() {
+    console.log(this.dragon);
   }
 }

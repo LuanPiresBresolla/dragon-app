@@ -1,0 +1,10 @@
+<div class="container">
+  <label [attr.for]="name">{{label}}</label>
+  <input
+    type="text"
+    [id]="name"
+    [name]="name"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+  >
+</div>

@@ -1,1 +1,43 @@
-<p>dragon-detail works!</p>
+<app-header
+  [goBackButton]="true"
+  title="Detalhes do dragão"
+></app-header>
+
+<div class="container">
+  <div class="form" *ngIf="!loading">
+    <button type="button" class="button-trash">
+      <i class="fa-solid fa-trash-can"></i>
+    </button>
+
+    <app-input
+      label="ID"
+      name="id"
+      [disabled]="true"
+      [value]="dragon.id"
+    ></app-input>
+
+    <app-input
+      label="Nome"
+      name="name"
+      [value]="dragon.name"
+    ></app-input>
+
+    <app-input
+      label="Tipo"
+      name="type"
+      [value]="dragon.type"
+    ></app-input>
+
+    <app-input
+      label="Data de criação"
+      name="createdAtFormatted"
+      [disabled]="true"
+      [value]="dragon.createdAtFormatted || dragon.createdAt"
+    ></app-input>
+
+    <div class="buttons-group">
+      <button type="button" class="button-cancel">Cancelar</button>
+      <button type="button" (click)="handleSaveDragon()">Salvar</button>
+    </div>
+  </div>
+</div>

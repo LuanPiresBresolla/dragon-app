@@ -1,0 +1,26 @@
+header {
+  height: 60px;
+  background-color: #439caa;
+  padding: 10px 50px;
+
+  display: flex;
+  align-items: center;
+
+  strong {
+    color: #fff;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+
+    margin-right: 10px;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    transition: scale 0.5s;
+  }
+}

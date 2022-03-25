@@ -41,7 +41,6 @@ export class DragonsListComponent implements OnInit {
       )
       .subscribe(response => {
         this.dragons = response;
-        console.log(response);
       });
   }
 
