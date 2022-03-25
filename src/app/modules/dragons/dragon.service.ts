@@ -16,4 +16,8 @@ export class DragonService {
   getDragons<T = any>() {
     return this.http.get<T>(this.endPoint + `dragon`);
   }
+
+  getDragonById<T = any>(id: string) {
+    return this.http.get<T>(this.endPoint + `dragon/${id}`);
+  }
 }

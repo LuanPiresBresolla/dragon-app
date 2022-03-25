@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IDragon } from 'src/app/modules/dragons/dragons-list/dragons-list.component';
 
 @Component({
@@ -10,9 +11,14 @@ export class DragonCardComponent implements OnInit {
 
   @Input() dragon: IDragon;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  navigateToDragonDetail() {
+    this.router.navigateByUrl(`/dragons/${this.dragon.id}`);
+  }
 }

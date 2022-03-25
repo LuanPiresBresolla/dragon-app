@@ -1,6 +1,24 @@
 .card {
   width: 250px;
-  height: 100px;
+  height: 125px;
 
-  border: 1.5px solid #a7a7a7;
+  background-color: #1F818C;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  padding: 10px;
+  border-radius: 5px;
+
+  color: #FFFFFF;
+
+  background-image: url('../../../assets/background-card2.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: scale 0.5s;
 }
