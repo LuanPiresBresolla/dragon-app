@@ -1,7 +1,7 @@
 header {
   height: 60px;
   background-color: #439caa;
-  padding: 10px 50px;
+  padding: 10px 20px;
 
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ header {
     font-size: 20px;
     font-weight: bold;
 
-    margin-right: 10px;
+    line-height: 18px;
   }
 
   button:hover {
@@ -29,5 +29,20 @@ header {
 
   h2 {
     color: #fff;
+    line-height: 18px;
+    margin-left: 10px;
+  }
+}
+
+@media(max-width: 500px) {
+  header {
+    button {
+      font-size: 16px;
+    }
+  }
+
+  .header-main h2 {
+    width: 90%;
+    font-size: 16px;
   }
 }
