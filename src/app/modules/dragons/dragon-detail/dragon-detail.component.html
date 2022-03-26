@@ -1,11 +1,14 @@
 <app-header
   [goBackButton]="true"
-  title="Detalhes do dragão"
+  [loading]="loadingDeleteDragon || loadingUpdateDragon"
+  [title]="title"
 ></app-header>
 
 <div class="container">
-  <div class="form" *ngIf="!loading">
-    <button type="button" class="button-trash">
+  <div class="form" *ngIf="!loadingDragonDetail">
+    <button type="button" class="button-trash" (click)="handleDeleteDragon()"
+      [disabled]="loadingDeleteDragon" *ngIf="!newDragon"
+    >
       <i class="fa-solid fa-trash-can"></i>
     </button>
 
@@ -13,31 +16,41 @@
       label="ID"
       name="id"
       [disabled]="true"
-      [value]="dragon.id"
+      [(ngModel)]="dragon.id"
     ></app-input>
 
     <app-input
       label="Nome"
       name="name"
-      [value]="dragon.name"
+      [(ngModel)]="dragon.name"
     ></app-input>
 
     <app-input
       label="Tipo"
       name="type"
-      [value]="dragon.type"
+      [(ngModel)]="dragon.type"
     ></app-input>
 
     <app-input
       label="Data de criação"
       name="createdAtFormatted"
       [disabled]="true"
-      [value]="dragon.createdAtFormatted || dragon.createdAt"
+      [(ngModel)]="dragon.createdAtFormatted || dragon.createdAt"
     ></app-input>
 
     <div class="buttons-group">
-      <button type="button" class="button-cancel">Cancelar</button>
-      <button type="button" (click)="handleSaveDragon()">Salvar</button>
+      <button type="button" class="button-cancel" (click)="handleNavigateGoBack()"
+        [disabled]="loadingUpdateDragon || loadingDeleteDragon"
+      >
+        Cancelar
+      </button>
+
+      <button type="button" (click)="handleButtonSave()"
+        [disabled]="loadingUpdateDragon || loadingDeleteDragon"
+      >
+        Salvar
+        <div class="spinner" *ngIf="loadingUpdateDragon"></div>
+      </button>
     </div>
   </div>
 </div>

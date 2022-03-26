@@ -5,16 +5,14 @@ header {
 
   display: flex;
   align-items: center;
-
-  strong {
-    color: #fff;
-  }
+  justify-content: space-between;
 
   button {
     background-color: transparent;
     border: 0;
     color: #fff;
     font-size: 20px;
+    font-weight: bold;
 
     margin-right: 10px;
   }
@@ -22,5 +20,14 @@ header {
   button:hover {
     transform: scale(1.05);
     transition: scale 0.5s;
+  }
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    color: #fff;
   }
 }

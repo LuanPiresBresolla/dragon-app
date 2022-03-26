@@ -1,8 +1,30 @@
-<app-header></app-header>
+<app-header [newDragon]="true"></app-header>
 
-<div class="dragon-list">
-  <app-dragon-card
-    *ngFor="let dragon of dragons"
-    [dragon]="dragon"
-  ></app-dragon-card>
+<div class="loading" *ngIf="loadingListDragons">
+  <div class="spinner-secondary"></div>
+  <h1>Carregando...</h1>
+</div>
+
+<div class="container" *ngIf="!loadingListDragons">
+  <button type="button" class="button-left" (click)="handleLeftArrowList()">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <button type="button" class="button-right" (click)="handleRightArrowList()">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <div class="dragon-list-area">
+    <div class="dragon-list"
+      [style.margin-left]="scrollListX + 'px'"
+      [style.width]="(dragons.length * 260) + 'px'"
+    >
+      <!-- item -->
+      <app-dragon-card
+        *ngFor="let dragon of dragons"
+        [dragon]="dragon"
+        style="display: inline-block;"
+      ></app-dragon-card>
+    </div>
+  </div>
 </div>

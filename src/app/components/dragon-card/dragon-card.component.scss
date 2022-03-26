@@ -4,21 +4,35 @@
 
   background-color: #1F818C;
   margin-right: 10px;
-  margin-bottom: 10px;
 
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 
   color: #FFFFFF;
 
-  background-image: url('../../../assets/background-card2.png');
+  background-image: url('../../../assets/background-card.png');
   background-position: bottom;
   background-repeat: no-repeat;
 
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  transition: all ease 0.3s;
+
+  strong {
+    line-height: 16px;
+  }
+
+  h3 {
+    line-height: 16px;
+    margin-top: 12px;
+  }
 }
 
 .card:hover {
-  transform: scale(1.05);
-  transition: scale 0.5s;
+  transform: scale(1.03);
 }

@@ -1,7 +1,16 @@
 <header>
-  <button type="button" *ngIf="goBackButton" (click)="handleGoBack()">
-    <i class="fa-solid fa-arrow-left"></i>
-  </button>
+  <div class="header-main">
+    <button type="button" *ngIf="goBackButton" (click)="handleGoBack()"
+      [disabled]="loading"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
 
-  <strong>{{title}}</strong>
+    <h2>{{title}}</h2>
+  </div>
+
+  <button type="button" (click)="handleAddDragon()" *ngIf="newDragon">
+    Novo dragão&nbsp;
+    <i class="fa-solid fa-plus"></i>
+  </button>
 </header>

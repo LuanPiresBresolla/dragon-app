@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: DragonDetailComponent,
+  },
+  {
+    path: '/new',
+    component: DragonDetailComponent,
   }
 ];
 

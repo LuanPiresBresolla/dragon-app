@@ -48,6 +48,10 @@
     color: #ffffff;
     font-weight: 600;
     font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   button:first-child {
@@ -60,7 +64,7 @@
   }
 
   .button-cancel {
-    background-color: #d8d7d7;
+    background-color: #ccc9c9;
     color: #333333;
   }
 }

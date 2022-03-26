@@ -1,6 +1,53 @@
-.dragon-list {
+.loading {
+  margin-top: 200px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  padding: 50px;
+.container {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+}
+
+.dragon-list-area {
+  overflow-x: hidden;
+  padding-left: 20px;
+
+  height: 140px;
+  margin-top: 15px;
+}
+
+.dragon-list {
+  transition: all ease 0.5s;
+}
+
+.button-left,
+.button-right {
+  position: absolute;
+  width: 40px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  font-size: 30px;
+  overflow: hidden;
+  border: 0;
+  opacity: 0;
+  transition: all ease 0.3s;
+  color: #fff;
+}
+
+.button-left {
+  left: 0;
+}
+
+.button-right {
+  right: 0;
+}
+
+.container:hover .button-left,
+.container:hover .button-right {
+  opacity: 1;
 }
